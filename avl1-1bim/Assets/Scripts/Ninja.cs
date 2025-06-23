@@ -1,33 +1,23 @@
 using UnityEngine;
 
 public class Ninja : Personagem
-    
 {
-    public enum ArmaDoNinja
-    {
-        SHURINKEN, CLONE
-    }
+    
+    [SerializeField] private int shurikens;
+    [SerializeField] private int clones;
+    [SerializeField] private string habilidadeEspecial = "Clone das Sombras";
 
-    private ArmaDoNinja poderes;
+    public int GetShurikens() { return shurikens; }
+    
+    public void SetShurikens(int value) { shurikens = value; }
 
-    public void setAmaDoNinja(ArmaDoNinja poderes);
-    {
-        this.poderes = poderes;
-    }
+    
+    public int GetClones() { return clones; }
+    
+    public void SetClones(int value) { clones = value; }
 
-    public ArmaDoNinja getArmaDoNinja()
-    {
-        return poderes;
-    }
-
-    public int DanoDoPersonagem()
-    {
-        int buff = 0;
-
-        switch (poderes)
-        {
-            case ArmaDoNinja.SHURINKEN:
-                buff = getForcaAtaque() + 40;
-        }
-    }
+    
+    public string GetHabilidadeEspecial() { return habilidadeEspecial; }
+    
+    public void SetHabilidadeEspecial(string value) { habilidadeEspecial = value; }
 }

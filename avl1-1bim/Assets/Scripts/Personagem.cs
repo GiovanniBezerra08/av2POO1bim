@@ -2,57 +2,36 @@ using UnityEngine;
 
 public class Personagem : MonoBehaviour
 {
-    public string nome;
-    public int energia;
-    public float agilidade;
-    public float forcaAtaque;
-    public string movimento;
+    
+    
+    [SerializeField] private string nome;
+    
+    [SerializeField] private int vida;
+    
+    [SerializeField] private int forca;
+    
+    [SerializeField] private float velocidade;
 
-    public void setNome(string nome)
-    {
-        this.nome = nome;
-    }
+    
+    
+    public string GetNome() { return nome; }
+    public void SetNome(string value) { nome = value; }
 
-    public string Nome()
-    {
-       return nome;
-    }
+    public int GetVida() { return vida; }
+    public void SetVida(int value) { vida = value; }
 
-    public void setEnergia(int energia)
-    {
-        this.energia = energia;
-    }
-    
-    public void setAgilidade(float agilidade)
-    {
-        this.agilidade = agilidade;
-    }
-    
-    public void setForcaAtaque(float forcaAtaque)
-    {
-        this.forcaAtaque = forcaAtaque;
-    }
-    
-    
-    public void setMovimento(string movimento)
-    {
-        this.movimento = movimento;
-    }
+    public int GetForca() { return forca; }
+    public void SetForca(int value) { forca = value; }
+
+    public float GetVelocidade() { return velocidade; }
+    public void SetVelocidade(float value) { velocidade = value; }
     
     
     
-    
-    
-    
-    
-    void Start()
+    public bool TemMaisForcaQue(Personagem outro)
     {
         
-    }
-
-    
-    void Update()
-    {
+        return this.forca > outro.forca;
         
     }
 }
